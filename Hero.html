@@ -1,0 +1,99 @@
+<style>
+*{
+  box-sizing: border-box;
+}
+
+body{
+  margin:0;
+  min-height:100vh;
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  display:flex;
+  justify-content:center;
+  align-items:center;
+}
+
+/* Glass effect card */
+.form-box{
+  width:90%;
+  max-width:420px;
+  background: rgba(255,255,255,0.15);
+  backdrop-filter: blur(12px);
+  border-radius:16px;
+  padding:25px;
+  box-shadow:0 20px 40px rgba(0,0,0,0.3);
+  animation: fadeIn 1s ease;
+}
+
+h2{
+  color:white;
+  text-align:center;
+  margin-bottom:20px;
+}
+
+input, textarea{
+  width:100%;
+  padding:12px;
+  margin-bottom:14px;
+  border:none;
+  border-radius:8px;
+  outline:none;
+  font-size:14px;
+}
+
+textarea{
+  resize:none;
+  height:80px;
+}
+
+/* Button animation */
+button{
+  width:100%;
+  padding:12px;
+  border:none;
+  border-radius:30px;
+  background: linear-gradient(90deg,#ff9a9e,#fad0c4);
+  font-size:16px;
+  font-weight:bold;
+  cursor:pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+button:hover{
+  transform: translateY(-2px);
+  box-shadow:0 10px 20px rgba(0,0,0,0.3);
+}
+
+/* Entry animation */
+@keyframes fadeIn{
+  from{
+    opacity:0;
+    transform: translateY(30px);
+  }
+  to{
+    opacity:1;
+    transform: translateY(0);
+  }
+}
+</style>
+<div class="form-box">
+  <h2>Personal Information</h2>
+
+  <form method="POST" action="https://script.google.com/macros/s/AKfycbzdSSYOnALZbd8ptxvW2WPYaXdC27qyHnKQIAENTf9LAseBlodWWTT-Tm5nHZnO9WuR/exec">
+
+    <input type="text" name="fullname" placeholder="Full Name" required>
+
+    <input type="date" name="birthdate" required>
+
+    <input type="text" name="classname" placeholder="Class" required>
+
+    <textarea name="address" placeholder="Address" required></textarea>
+
+    <input type="tel" name="mobile" placeholder="Mobile Number" pattern="[0-9]{10}" required>
+
+    <textarea name="description" placeholder="Description" required></textarea>
+
+    <button type="submit">✨ Submit</button>
+
+  </form>
+</div>
